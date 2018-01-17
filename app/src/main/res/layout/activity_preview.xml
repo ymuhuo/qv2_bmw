@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/capture_container_flayout"
+    android:background="@color/background">
+    <SurfaceView
+        android:id="@+id/main_surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="65dp"
+                    android:weightSum="1">
+                    <ImageButton
+                        android:id="@+id/lights_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:src="@mipmap/light"
+                        android:background="@drawable/img_btn_bg"/>
+                    <TextView
+                        android:id="@+id/lights_show"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="近光灯"
+                        android:textColor="@color/colorText"
+                        android:textSize="7pt"
+                        android:layout_marginLeft="10dp"/>
+                    <com.bmw.vlc.view.view.Vertical_seekbar
+                        android:id="@+id/lights_adjust"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:max="255"
+                        style="@style/Widget.SeekBar.Normal"
+                        android:layout_marginBottom="25dp"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:layout_weight="1"
+                        android:src="@mipmap/up"
+                        android:background="@drawable/img_btn_bg"/>
+                    <ImageButton
+                        android:id="@+id/down"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/down"
+                        android:background="@drawable/img_btn_bg"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                style="@style/main_linearlayout"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/Records"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@mipmap/record"
+                    android:clickable="true"
+                    android:padding="5dp"
+                    android:background="@drawable/img_btn_bg" />
+                <ImageView
+                    android:id="@+id/screenShot"
+                    android:clickable="true"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="15dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="13dp"
+                    android:src="@mipmap/shot"
+                    android:background="@drawable/img_btn_bg" />
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/autoHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:padding="10dp"
+                android:src="@mipmap/hozontal"
+                android:background="@drawable/img_btn_bg"/>
+            <LinearLayout
+                style="@style/main_linearlayout"
+                android:paddingBottom="5dp"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/zoom_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/add"
+                    android:padding="10dp"
+                    android:background="@drawable/img_btn_bg" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="聚焦"
+                    android:gravity="center"
+                    android:textSize="@dimen/preview_textsize"
+                    android:textColor="@color/colorText"/>
+
+                <ImageButton
+                    android:id="@+id/zoom_sub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/sub"
+                    android:padding="10dp"
+                    android:background="@drawable/img_btn_bg" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/main_linearlayout"
+                android:paddingBottom="5dp"
+                android:layout_weight="1">
+                <ImageButton
+                    android:id="@+id/size_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/add"
+                    android:padding="10dp"
+                    android:background="@drawable/img_btn_bg" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="变倍"
+                    android:gravity="center"
+                    android:textSize="@dimen/preview_textsize"
+                    android:textColor="@color/colorText"/>
+
+                <ImageButton
+                    android:id="@+id/size_sub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/sub"
+                    android:padding="10dp"
+                    android:background="@drawable/img_btn_bg" />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/battery0"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>
